@@ -1,0 +1,19 @@
+{%extends 'index.html'%}
+
+{%block body%}
+<nav> 
+     <ul>
+        <li> <a href="{{url_for('register_user') }}"> Register user</a></li>
+        <li> <a href="{{url_for('users') }}"> Users </a></li>
+        <li> <a href="{{url_for('manage_user')}}"> Manage Data </a></li>
+        <li> <a href="{{url_for('logout_user') }}"> Logout</a></li>    
+        </ul>
+    </nav>
+<a href="{{login_admin}}"> </a>
+<a href="{{dashboard}}"></a>
+<div class="container">
+    <h1> Welcome Here! 👩🏼‍🦳 </h1>
+    <p> You're sucessfully logged in as a admin.😊</p>
+   
+</div>
+{%endblock%}

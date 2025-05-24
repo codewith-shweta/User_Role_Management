@@ -1,0 +1,17 @@
+{%extends 'index.html'%}
+{%block body%}
+<div class="container">
+    <nav>
+        <a href="{{url_for('login_admin') }}">  </a>
+        </nav>
+    <h1> Admin Site 🔏 </h1>
+
+    <h2> Login Activity ⬇️</h2>
+
+    <form action="{{url_for('login_admin')}}" method="POST">
+        <input type="text" name="username" placeholder="username", id="username" > <br><br>
+        <input type="password" name="password" id="password", placeholder="password"> <br> <br>
+        <input type="submit" value="Submit">
+        </form>
+</div>
+{%endblock%}

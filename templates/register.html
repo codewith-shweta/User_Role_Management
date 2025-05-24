@@ -1,0 +1,27 @@
+{%extends 'index.html'%}
+
+{%block body%}
+
+<a href="{{url_for('register_user')}}"> </a>
+<h1> Register yourself!  </h1>
+<div class="container">
+    <form method="post">
+        <label> Name: </label>
+        <input type="text" name="firstname" placeholder="enter your username: " required> <br> <br>
+
+        <label> Lastname: </label>
+        <input type="text" name="lastname" placeholder="enter surname: " required> <br> <br>
+
+        <label>password: </label>
+        <input type="text" name="hash_password" placeholder="enter Password here: " required> <br> <br>
+
+        <label> Email: </label>
+        <input type="text" name="email" placeholder="please fill the box:" required> <br> <br>
+
+        <input type="hidden" name="role" value="User">  
+
+        <label>Submit</label>
+        <input  type="submit" value="Submit" required> 
+    </form>
+</div>
+{% endblock %}

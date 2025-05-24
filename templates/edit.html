@@ -1,0 +1,26 @@
+{% extends 'index.html'%}
+{%block body%}
+<div class="containner">
+<form method="post">
+    <label>First Name:</label>
+    <input type="text" name="firstname" value="{{ user.firstname }}" required><br><br>
+
+    <label>Last Name:</label>
+    <input type="text" name="lastname" value="{{ user.lastname }}" required><br><br>
+
+    <label>Email:</label>
+    <input type="text" name="email" value="{{ user.email }}" required><br><br>
+
+    <label>Password:</label>
+    <input type="text" name="hash_password" value="{{ user.hash_password }}" required><br><br>
+
+    <label>Created At:</label>
+    <input type="text" value="{{ user.created_at.strftime('%Y-%m-%d %H:%M:%S') }}" readonly><br><br>
+
+    <label>Indicator:</label>
+    <input type="text" value="{{ 'Active' if user.indicator else 'Inactive' }}" readonly><br><br>
+
+    <input type="submit" value="Update User">
+    </form>
+</div>
+{%endblock%}

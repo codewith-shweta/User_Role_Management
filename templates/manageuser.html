@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block body%}
+<h2> Manage User's Data </h2>
+<table border="2">
+    <tr>
+        <th> Id </th>
+        <th> Name </th>
+        <th> Email </th>
+        <th> Password </th>
+        <th> Created </th>
+        <th> Indicator </th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td> {{user.id}}</td>
+        <td> {{user.firstname}}</td>
+        <td> {{user.email}}</td>
+        <td> {{user.hash_password}}</td>
+        <td> {{user.created_at}}</td>
+        <td> {{user.indicator}}</td>
+        <td>
+            <a href="{{url_for('edit', user_id=user.id) }}"> Edit </a> <br>
+            <a href="{{url_for('delete', user_id=user.id)}}"> Delete </a>
+        </td>
+    </tr>
+    {%endfor%}
+</table>
+{%endblock%}

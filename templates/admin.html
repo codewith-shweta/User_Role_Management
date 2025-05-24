@@ -1,0 +1,15 @@
+{% extends 'index.html'%}
+
+{%block body%}
+<h1> Create New Admin </h1>
+<div class="containner">
+    <form action="{{url_for('new_admin')}}" method="post">
+        <label> Name: </label>
+        <input type="text" name="username" placeholder="enter your name: " required> <br> <br>
+        <label> Password: </label>
+        <input type="text" name="password" placeholder="enter password here: " required><br> <br>
+        <button type="submit"> Add admin </button>
+        </form>
+</div>
+
+{%endblock%}

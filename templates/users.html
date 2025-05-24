@@ -1,0 +1,29 @@
+{% extends 'index.html'%}
+   {% block body %} 
+ <h2> Users List </h2>
+ <table border="2">
+   <tr>
+      <th> Id</th>
+      <th> FirstName </th>
+      <th> LastName </th>
+      <th> Role </th>
+      </tr>
+      {% for user in users %}
+      <tr>
+         <td> {{user.id}}</td>
+         <td> {{user.firstname}}</td>
+         <td> {{user.lastname}}</td>
+         <td> {{user.role.role}}</td>
+      </tr>
+      {%endfor%}
+ </table>
+{%endblock%}
+
+
+<!-- roles= db.relationship('Role', backref='users') -->
+ <!-- now what is happening here is the item user is fetching data from the fields, in the
+  role case the first role is fetching data from user modle and the second from role model 
+  expected output would be : "shivam, patel, user" because this is been fetching from two tables    -->
+
+
+  <!-- Role:-{{user.role.role}} -->
